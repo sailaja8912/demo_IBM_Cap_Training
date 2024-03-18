@@ -26,6 +26,10 @@ service CatalogService @(path:'CatalogService'){
         Items
     }
     actions{
+        @cds.odata.bindingparameter.name : '_anubhav'
+        @Common.SideEffects : {
+                TargetProperties : ['_anubhav/GROSS_AMOUNT']
+            }
         action boost();
     };
     function largestOrder() returns POs;
